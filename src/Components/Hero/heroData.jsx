@@ -3,7 +3,7 @@ const heroData = {
   name: "Jawad Ghulami",
   title: "Building Scalable and Stunning Websites for Every Business",
   description:
-    "A passionate and detail-oriented web developer specializing in creating modern, responsive, and user-friendly websites. Skilled in front-end and back-end development, delivering high-performance digital experiences with clean code and creative design.",
+    "Helping businesses build fast, responsive, and visually engaging websites that create better online experiences.",
   buttons: [
     { text: "My Work", href: "#portfolio", primary: true },
     { text: "Contact Me", href: "#contact", primary: false },

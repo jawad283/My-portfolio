@@ -81,18 +81,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 px-4 sm:px-6 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div
-          className="absolute top-20 -left-40 w-80 h-80 bg-indigo-500/10 
-                     rounded-full blur-3xl "
-        />
-
-        <div
-          className="absolute bottom-40 -right-40 w-96 h-96 bg-blue-500/10 
-                     rounded-full blur-3xl "
-        />
-      </div>
-
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* LEFT SIDE - Content */}
