@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./Components/Header/Header";
 import HeroSection from "./Components/Hero/HeroSection";
 import AboutSection from "./Components/About me/AboutSection";
+import SkillsShowcase from "./Components/Skills/SkillsShowcase";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <SkillsShowcase />
     </div>
   );
 }
