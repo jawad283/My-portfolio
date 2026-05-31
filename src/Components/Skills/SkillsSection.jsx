@@ -40,7 +40,7 @@ const SkillsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 overflow-hidden bg-white dark:bg-gray-950"
+      className="relative min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 overflow-hidden bg-white dark:bg-gray-950"
     >
       <div className="relative w-full max-w-7xl mx-auto">
         <motion.div
