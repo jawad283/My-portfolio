@@ -4,6 +4,7 @@ import HeroSection from "./Components/Hero/HeroSection";
 import AboutSection from "./Components/About me/AboutSection";
 import SkillsSection from "./Components/Skills/SkillsSection";
 import ProjectsSection from "./Components/Projects/ProjectsSection";
+import Services from "./Components/Services/Services";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
+      <Services />
     </div>
   );
 }
