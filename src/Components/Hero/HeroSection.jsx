@@ -80,7 +80,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 px-4 sm:px-6 overflow-hidden">
+    <section className="relative min-h-screen pt-32 pb-10 px-4 sm:px-6 overflow-hidden">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* LEFT SIDE - Content */}

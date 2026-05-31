@@ -1,7 +1,8 @@
 import img1 from "../../assets/images/img1.webp";
 const heroData = {
   name: "Jawad Ghulami",
-  title: "Building Scalable and Stunning Websites for Every Business",
+  title:
+    "I am Web Devloper Building Scalable and Stunning Websites for Every Business",
   description:
     "Helping businesses build fast, responsive, and visually engaging websites that create better online experiences.",
   buttons: [
