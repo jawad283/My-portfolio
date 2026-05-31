@@ -50,7 +50,7 @@ const servicesData = [
   },
   {
     id: "google-ads",
-    icon: "Megaphone",
+    icon: Megaphone,
     title: "Google Ads",
     description:
       "Creating and managing high-performing Google Ads campaigns to drive targeted traffic, leads, and conversions with measurable ROI.",
