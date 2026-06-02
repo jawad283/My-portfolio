@@ -5,6 +5,7 @@ import AboutSection from "./Components/About me/AboutSection";
 import SkillsSection from "./Components/Skills/SkillsSection";
 import ProjectsSection from "./Components/Projects/ProjectsSection";
 import Services from "./Components/Services/Services";
+import ContactSection from "./Components/Contact me/ContactSection";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <SkillsSection />
       <ProjectsSection />
       <Services />
+      <ContactSection />
     </div>
   );
 }

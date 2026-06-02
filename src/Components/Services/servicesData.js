@@ -10,8 +10,6 @@ import {
   Megaphone,
 } from "lucide-react";
 
-// Replace icons with your own icon set if needed.
-// Each service: id, icon, title, description, tags (optional), cta (optional)
 const servicesData = [
   {
     id: "web-development",
