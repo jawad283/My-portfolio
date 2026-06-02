@@ -17,7 +17,7 @@ const ContactSection = () => {
 
   // --- WhatsApp Button State ---
   const [showConfirm, setShowConfirm] = useState(false);
-  const myPhoneNumber = "+93729784504"; // <--- REPLACE WITH YOUR PHONE NUMBER
+  const myPhoneNumber = "93729784504"; // <--- Numbers only for WhatsApp link
   const defaultMessage = encodeURIComponent(
     "Hi! I'm interested in working with you.",
   );
@@ -71,14 +71,14 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-12"
+            className="space-y-12 flex flex-col items-center text-center lg:items-start lg:text-left"
           >
             <div className="space-y-6">
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-white uppercase">
                 Contact{" "}
                 <span className="text-indigo-500 dark:text-indigo-400">Me</span>
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-md">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-md mx-auto lg:mx-0">
                 "Every great project starts with a simple conversation. Whether
                 you have a fully-formed idea or just a spark of inspiration,
                 let's talk about how we can bring your vision to life in the
@@ -88,7 +88,7 @@ const ContactSection = () => {
 
             <div className="space-y-8">
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wider">
                   Phone
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -96,7 +96,7 @@ const ContactSection = () => {
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wider">
                   Email
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -221,7 +221,6 @@ const ContactSection = () => {
                   )}
 
                   <div className="pt-4 flex flex-col sm:flex-row items-center gap-6">
-                    {" "}
                     <button
                       type="submit"
                       disabled={status.submitting}
