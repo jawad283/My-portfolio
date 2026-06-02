@@ -2,7 +2,10 @@ import { motion } from "motion/react";
 
 const AboutSection = () => {
   return (
-    <section className="relative py-6 sm:py-6 px-4 sm:px-6 overflow-hidden">
+    <section
+      id="About"
+      className="relative py-6 sm:py-6 px-4 sm:px-6 overflow-hidden"
+    >
       <div className="absolute inset-0 -z-10">
         <div
           className="absolute top-20 -left-40 w-80 h-80 bg-indigo-500/10 

@@ -15,9 +15,8 @@ const ContactSection = () => {
     message: "",
   });
 
-  // --- WhatsApp Button State ---
   const [showConfirm, setShowConfirm] = useState(false);
-  const myPhoneNumber = "93729784504"; // <--- Numbers only for WhatsApp link
+  const myPhoneNumber = "93729784504";
   const defaultMessage = encodeURIComponent(
     "Hi! I'm interested in working with you.",
   );
@@ -65,7 +64,6 @@ const ContactSection = () => {
     >
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* LEFT SIDE - Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -106,7 +104,6 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          {/* RIGHT SIDE - Contact Form Card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -233,7 +230,7 @@ const ContactSection = () => {
                     >
                       {status.submitting ? "Sending..." : "Send Message"}
                     </button>
-                    {/* WhatsApp Button with Confirmation */}
+
                     <div className="relative w-full sm:w-auto">
                       <AnimatePresence mode="wait">
                         {!showConfirm ? (

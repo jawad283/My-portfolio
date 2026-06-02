@@ -6,6 +6,7 @@ import SkillsSection from "./Components/Skills/SkillsSection";
 import ProjectsSection from "./Components/Projects/ProjectsSection";
 import Services from "./Components/Services/Services";
 import ContactSection from "./Components/Contact me/ContactSection";
+import Footer from "./Components/Footer/Footer";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
       <ProjectsSection />
       <Services />
       <ContactSection />
+      <Footer />
     </div>
   );
 }

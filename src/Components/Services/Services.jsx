@@ -8,11 +8,10 @@ import ServiceCard from "./ServiceCard";
 const Services = () => {
   return (
     <section
-      id="services"
+      id="Services"
       className="relative py-20 sm:py-28 px-4 sm:px-6 overflow-hidden"
     >
       <div className="mx-auto max-w-6xl">
-        {/* Section header */}
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 12 }}

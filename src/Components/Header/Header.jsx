@@ -72,10 +72,10 @@ const MoonIcon = ({ size = 18 }) => (
 );
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Portfolio", href: "#portfolio" },
+  { name: "Home", href: "#Home" },
+  { name: "About", href: "#About" },
+  { name: "Projects", href: "#Projects" },
+  { name: "Services", href: "#Services" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -83,7 +83,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
-  // Initialize theme from localStorage
   useEffect(() => {
     const stored = localStorage.getItem("theme");
     const prefersDark =
@@ -92,7 +91,6 @@ const Navbar = () => {
     setIsDark(prefersDark);
   }, []);
 
-  // Apply theme to <html> and body for global background
   useEffect(() => {
     const root = document.documentElement;
     const body = document.body;

@@ -3,16 +3,14 @@ import projectsData from "./projectsData";
 import ProjectCard from "./ProjectCard";
 
 const ProjectsSection = () => {
-  // Sort: featured projects first, then by ID
   const sortedProjects = [...projectsData].sort((a, b) => {
     if (a.featured === b.featured) return a.id - b.id;
     return a.featured ? -1 : 1;
   });
 
   return (
-    <section className="relative py-8 sm:py-12 px-4 sm:px-6">
+    <section id="Projects" className="relative py-8 sm:py-12 px-4 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        {/* Section Header - Centered */}
         <div className="mb-12 sm:mb-16 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -21,7 +19,6 @@ const ProjectsSection = () => {
             viewport={{ once: true }}
             className="space-y-4 flex flex-col items-center"
           >
-            {/* Intro Badge */}
             <div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full
                           border border-indigo-200/50 dark:border-indigo-500/30
@@ -34,15 +31,13 @@ const ProjectsSection = () => {
               </span>
             </div>
 
-            {/* Title - Centered */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Featured{" "}
+              My{" "}
               <span className="text-indigo-600 dark:text-indigo-400">
                 Projects
               </span>
             </h2>
 
-            {/* Subtitle - Centered */}
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Explore a selection of projects I've built, showcasing my
               expertise in web development, design, and problem-solving.
@@ -50,7 +45,6 @@ const ProjectsSection = () => {
           </motion.div>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {sortedProjects.map((project, index) => (
             <motion.div
