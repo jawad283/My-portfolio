@@ -6,7 +6,7 @@ const heroData = {
   description:
     "Helping businesses build fast, responsive, and visually engaging websites that create better online experiences.",
   buttons: [
-    { text: "My Work", href: "#portfolio", primary: true },
+    { text: "My Work", href: "#Projects", primary: true },
     { text: "Contact Me", href: "#contact", primary: false },
   ],
   socialLinks: [
