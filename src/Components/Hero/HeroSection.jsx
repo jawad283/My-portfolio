@@ -131,25 +131,21 @@ const HeroSection = () => {
                 rotateX: 0,
               }}
               viewport={{ once: true, margin: "-100px" }}
-              animate={{
-                y: [0, -10, 0],
-              }}
               transition={{
                 duration: 0.9,
                 ease: "easeOut",
-
-                y: {
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
               }}
               whileHover={{
                 scale: 1.05,
                 rotateY: -5,
-                rotateX: 7,
+                rotateX: 8,
               }}
-              className="relative w-full max-w-md"
+              whileTap={{
+                scale: 0.98,
+                rotateY: 5,
+                rotateX: -5,
+              }}
+              className="relative w-full max-w-md cursor-pointer"
               style={{
                 transformStyle: "preserve-3d",
               }}
