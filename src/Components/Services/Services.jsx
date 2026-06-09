@@ -1,16 +1,10 @@
-// Services.jsx
-
 import { motion } from "motion/react";
 import servicesData from "./servicesData";
 import ServiceCard from "./ServiceCard";
 
-// Wire in your existing section heading / shared animation utilities here if you have them.
 const Services = () => {
   return (
-    <section
-      id="Services"
-      className="relative py-20 sm:py-28 px-4 sm:px-6 overflow-hidden"
-    >
+    <section id="Services" className="relative py-20 sm:py-28 px-4 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
@@ -53,14 +47,30 @@ const Services = () => {
           </motion.p>
         </div>
 
-        {/* Cards grid */}
-        <div
-          className="mt-14 sm:mt-16 grid gap-6 sm:gap-7
-                     grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-        >
+        <div className="mt-14 sm:mt-16 block sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {servicesData.map((service, index) => (
-            <ServiceCard key={service.id} service={service} index={index} />
+            <div
+              key={service.id}
+              className="sticky top-20 sm:relative sm:top-0 w-full"
+              style={{
+                zIndex: index + 1,
+
+                marginBottom: index === servicesData.length - 1 ? "0" : "100px",
+              }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-900 rounded-2xl"
+              >
+                <ServiceCard service={service} index={index} />
+              </motion.div>
+            </div>
           ))}
+
+          <div className="h-[20vh] sm:hidden" />
         </div>
       </div>
     </section>

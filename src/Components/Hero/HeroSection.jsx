@@ -124,20 +124,30 @@ const HeroSection = () => {
                 y: 40,
                 rotateX: 10,
               }}
-              animate={{
+              whileInView={{
                 opacity: 1,
                 scale: 1,
                 y: 0,
                 rotateX: 0,
               }}
+              viewport={{ once: true, margin: "-100px" }}
+              animate={{
+                y: [0, -10, 0],
+              }}
               transition={{
                 duration: 0.9,
                 ease: "easeOut",
+
+                y: {
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
               }}
               whileHover={{
-                scale: 1.02,
-                rotateY: -4,
-                rotateX: 6,
+                scale: 1.05,
+                rotateY: -5,
+                rotateX: 7,
               }}
               className="relative w-full max-w-md"
               style={{
@@ -162,10 +172,10 @@ const HeroSection = () => {
                     alt={heroData.name}
                     className="w-full h-full object-cover"
                     whileHover={{
-                      scale: 1.08,
+                      scale: 1.1,
                     }}
                     transition={{
-                      duration: 0.4,
+                      duration: 0.6,
                     }}
                     onError={(e) => {
                       e.target.style.display = "none";
