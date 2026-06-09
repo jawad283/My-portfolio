@@ -141,9 +141,9 @@ const HeroSection = () => {
                 rotateX: 8,
               }}
               whileTap={{
-                scale: 0.98,
-                rotateY: 5,
-                rotateX: -5,
+                scale: 1.01,
+                rotateY: -4,
+                rotateX: 6,
               }}
               className="relative w-full max-w-md cursor-pointer"
               style={{
