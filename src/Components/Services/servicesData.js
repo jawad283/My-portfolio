@@ -16,7 +16,7 @@ const servicesData = [
     icon: Code2,
     title: "Web Development",
     description:
-      "Building fast, accessible, and scalable web applications with modern React, Next.js, and clean architecture.",
+      "Building fast, accessible, and scalable web applications with modern React, javascript, and clean architecture.",
     tags: ["React", "JavaScript", "Tailwind"],
   },
 

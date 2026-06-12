@@ -124,7 +124,6 @@ const Navbar = () => {
                    transition-colors duration-300"
       >
         <div className="flex items-center justify-between px-5 sm:px-7 py-3">
-          {/* Logo */}
           <a
             href="#home"
             className="text-lg sm:text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
@@ -132,7 +131,6 @@ const Navbar = () => {
             Jawad <span className="text-indigo-500"> Portfolio</span>
           </a>
 
-          {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -148,7 +146,6 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Right side */}
           <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={toggleTheme}
@@ -168,7 +165,6 @@ const Navbar = () => {
               Contact Me
             </a>
 
-            {/* Mobile menu button */}
             <button
               onClick={toggleMenu}
               aria-label="Toggle menu"
@@ -180,7 +176,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile dropdown */}
         {isOpen && (
           <div className="md:hidden border-t border-gray-200/60 dark:border-white/10 px-5 py-4">
             <ul className="flex flex-col gap-1">
