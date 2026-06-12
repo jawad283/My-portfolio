@@ -1,9 +1,5 @@
-// ServiceCard.jsx
-
 import { motion } from "motion/react";
 
-// Reusable service card. Stateless and theme-aware.
-// Hook in your own shared <Tag />, <Button />, or animation utilities here if needed.
 const ServiceCard = ({ service, index = 0 }) => {
   const { icon: Icon, title, description, tags, cta } = service;
 

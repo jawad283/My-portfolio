@@ -47,30 +47,42 @@ const Services = () => {
           </motion.p>
         </div>
 
-        <div className="mt-14 sm:mt-16 block sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        <div className="mt-14 sm:mt-16 block md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {servicesData.map((service, index) => (
             <div
               key={service.id}
-              className="sticky top-20 sm:relative sm:top-0 w-full"
+              className="sticky top-20 md:relative md:top-0 w-full h-full"
               style={{
                 zIndex: index + 1,
-
-                marginBottom: index === servicesData.length - 1 ? "0" : "100px",
               }}
             >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-900 rounded-2xl"
+              {/* 
+                  Reduced Margin: 
+                  Lowered from 100px to 40px to make the scroll transition snappier.
+              */}
+              <div
+                className={`${index === servicesData.length - 1 ? "" : "mb-10 md:mb-0"} h-full`}
               >
-                <ServiceCard service={service} index={index} />
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-10px" }}
+                  transition={{
+                    duration: 0.4, // Faster entrance
+                    delay: 0, // Removed delay for immediate response
+                    ease: "easeOut",
+                  }}
+                  className="h-full flex flex-col"
+                >
+                  {/* Removed the extra background wrapper to keep your original ServiceCard style */}
+                  <ServiceCard service={service} index={index} />
+                </motion.div>
+              </div>
             </div>
           ))}
 
-          <div className="h-[20vh] sm:hidden" />
+          {/* Reduced spacer height for a tighter feel */}
+          <div className="h-[10vh] md:hidden" />
         </div>
       </div>
     </section>

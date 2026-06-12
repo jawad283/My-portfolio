@@ -81,34 +81,33 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    const prefersDark =
-      stored === "dark" ||
-      (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    setIsDark(prefersDark);
-  }, []);
+  // Initialize theme from localStorage directly to prevent flicker
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("theme");
+      if (stored) return stored === "dark";
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    return false;
+  });
 
+  // Apply theme to document on mount and whenever isDark changes
   useEffect(() => {
     const root = document.documentElement;
     const body = document.body;
-
-    root.classList.add("transition-colors", "duration-300");
-    body.classList.add("transition-colors", "duration-300");
 
     if (isDark) {
       root.classList.add("dark");
       body.classList.remove("bg-white", "text-gray-900");
       body.classList.add("bg-gray-950", "text-gray-100");
+      localStorage.setItem("theme", "dark");
     } else {
       root.classList.remove("dark");
       body.classList.remove("bg-gray-950", "text-gray-100");
       body.classList.add("bg-white", "text-gray-900");
+      localStorage.setItem("theme", "light");
     }
-
-    localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
 
   const toggleTheme = () => setIsDark((prev) => !prev);
@@ -131,7 +130,12 @@ const Navbar = () => {
             Jawad <span className="text-indigo-500"> Portfolio</span>
           </a>
 
-          <ul className="hidden md:flex items-center gap-8">
+          {/* 
+              Tablet/Mobile Link Hiding:
+              Changed 'md:flex' to 'lg:flex' so links only show on Desktop.
+              This means Tablets will now use the Hamburger menu.
+          */}
+          <ul className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
@@ -165,10 +169,14 @@ const Navbar = () => {
               Contact Me
             </a>
 
+            {/* 
+                Hamburger Menu Visibility:
+                Changed 'md:hidden' to 'lg:hidden' to match the link hiding above.
+            */}
             <button
               onClick={toggleMenu}
               aria-label="Toggle menu"
-              className="md:hidden p-2 rounded-full text-gray-700 dark:text-gray-200
+              className="lg:hidden p-2 rounded-full text-gray-700 dark:text-gray-200
                          hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
             >
               {isOpen ? <XIcon size={20} /> : <MenuIcon size={20} />}
@@ -176,8 +184,12 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* 
+            Mobile/Tablet Menu:
+            Changed 'md:hidden' to 'lg:hidden'.
+        */}
         {isOpen && (
-          <div className="md:hidden border-t border-gray-200/60 dark:border-white/10 px-5 py-4">
+          <div className="lg:hidden border-t border-gray-200/60 dark:border-white/10 px-5 py-4">
             <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <li key={link.name}>
